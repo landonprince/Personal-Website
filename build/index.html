@@ -12,7 +12,7 @@
   <body class="min-h-screen bg-slate-50 dark:bg-[#1b1b1b] dark:text-white">
     <!---------- NAVBAR ------------------------>
 
-    <header class="bg-[#0c0c0c] sticky top-0 z-10">
+    <header class="bg-[#111111] sticky top-0 z-10">
       <section
         class="max-w-4xl mx-auto p-4 pb-5 flex justify-between items-center"
       >
@@ -31,17 +31,17 @@
           <nav class="hidden sm:block space-x-8 text-xl" aria-label="main">
             <a
               href="#aboutme"
-              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
               >About Me</a
             >
             <a
               href="#projects"
-              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
               >Projects</a
             >
             <a
               href="#contact"
-              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
               >Contact</a
             >
           </nav>
@@ -56,7 +56,7 @@
 
       <section
         id="hero"
-        class="flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 sm:gap-1 mb-12 pt-12 transition-transform duration-200 ease-in-out hover:scale-105 scroll-mt-40"
+        class="hero-hover flex flex-col-reverse justify-center sm:flex-row p-6 items-center gap-8 sm:gap-1 mb-12 pt-14 transition-transform duration-200 ease-in-out hover:scale-105 scroll-mt-40"
       >
         <article class="sm:w-1/2">
           <h2
@@ -66,9 +66,14 @@
             <span class="gradient-text">Landon</span>
           </h2>
           <p
-            class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-white"
+            class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-zinc-400"
           >
-            Welcome to my personal website
+            <span>W</span><span>e</span><span>l</span><span>c</span
+            ><span>o</span><span>m</span><span>e</span><span> </span
+            ><span>t</span><span>o</span><span> </span><span>m</span
+            ><span>y</span><span> </span><span> </span><span>w</span
+            ><span>e</span><span>b</span><span>s</span><span>i</span
+            ><span>t</span><span>e</span>
           </p>
         </article>
         <img
@@ -91,14 +96,14 @@
           class="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8"
         >
           <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#0c0c0c] py-6 px-2 rounded-3xl shadow-xl"
+            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img src="./img/photo-512 (4).png" alt="test" class="w-1/2 mb-6" />
             <h3 class="text-3xl text-center text-slate-900 dark:text-white">
               Pixalyze®
             </h3>
             <p
-              class="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400"
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
             >
               C++
             </p>
@@ -109,14 +114,14 @@
             </p>
           </li>
           <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#0c0c0c] py-6 px-2 rounded-3xl shadow-xl"
+            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img src="./img/joystick-512.png" alt="test" class="w-1/2 mb-6" />
             <h3 class="text-3xl text-center text-slate-900 dark:text-white">
               PySlice®
             </h3>
             <p
-              class="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400"
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
             >
               Python
             </p>
@@ -127,7 +132,7 @@
             </p>
           </li>
           <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#0c0c0c] py-6 px-2 rounded-3xl shadow-xl"
+            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/speech-bubble-2-512.png"
@@ -138,7 +143,7 @@
               ChatFlow®
             </h3>
             <p
-              class="hidden sm:block text-3xl text-center mt-2 text-slate-500 dark:text-slate-400"
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
             >
               Java
             </p>
@@ -154,14 +159,14 @@
       <!---------- PROJECTS ------------------------>
 
       <hr class="mx-auto bg-black dark:bg-white w-1/2" />
-      <section id="projects" class="p-6 my-12">
+      <section id="projects" class="p-6 my-12 scroll-mt-20">
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
           Projects
         </h2>
         <div
-          class="max-w-4xl mx-auto bg-white dark:bg-[#0c0c0c] rounded-xl shadow-xl overflow-hidden mt-12"
+          class="max-w-4xl mx-auto bg-white dark:bg-[#252525] rounded-xl shadow-xl overflow-hidden mt-12"
         >
           <div class="sm:flex">
             <div class="sm:w-1/3">
@@ -172,24 +177,24 @@
               />
             </div>
             <div class="sm:w-2/3 p-6">
-              <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                Card Title
+              <h2
+                class="text-2xl font-bold text-gray-900 dark:text-[#FF2E4A] mb-4"
+              >
+                Landon Prince
               </h2>
               <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-                sit amet tristique urna. Duis vel ultricies odio, nec
-                scelerisque leo. Morbi id sapien vel leo aliquet cursus ut sit
-                amet orci. Suspendisse potenti.
+                Hello there! I am an undergraduate at Vanderbilt University
+                majoring in Computer Science and minoring in business. Driven by
+                a profound passion for computer science, I am dedicated to
+                deepening my expertise and contributing innovative solutions in
+                the technology sector. My academic pursuits in computer science
+                are matched by hands-on experience in software development and a
+                fervent commitment to continuous learning. Whether working on
+                cutting-edge projects or engaging with the latest in functional
+                programming and cloud technologies, I bring a blend of
+                curiosity, analytical thinking, and a collaborative spirit to
+                every endeavor.
               </p>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Fusce vel nulla id libero malesuada faucibus. Quisque accumsan,
-                arcu nec vestibulum aliquet, elit nunc gravida libero, in
-                vulputate risus lorem id lectus. Curabitur vitae turpis non
-                dolor auctor luctus.
-              </p>
-              <a href="#" class="text-blue-500 dark:text-blue-400 font-semibold"
-                >Read more</a
-              >
             </div>
           </div>
         </div>
@@ -203,13 +208,61 @@
       <!---------- CONTACT ------------------------>
 
       <hr class="mx-auto bg-black dark:bg-white w-1/2" />
-      <section id="contact" class="p-6 my-12">
+      <section id="contact" class="p-6 my-12 scroll-mt-16">
         <h2
           class="text-4xl font-bold text-center sm:text-5xl mb-6 text-slate-900 dark:text-white"
         >
           Contact
         </h2>
+        <form
+          action=""
+          class="max-w-4xl mx-auto text-2xl sm:text-3xl flex flex-col items-left gap-4"
+        >
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            minlength="3"
+            maxlength="60"
+            placeholder="Your Subject"
+            class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none"
+          />
+          <label for="message">Message:</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+            class="w-full text-black text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none"
+          ></textarea>
+          <button
+            class="bg-teal-700 hover:bg-teal-600 active:bg-teal-500 text-white p-3 w-48 rounded-xl border border-solid border-slate-900 dark:border-none"
+          >
+            Submit
+          </button>
+        </form>
       </section>
     </main>
+
+    <!---------- FOOTER ------------------------>
+
+    <footer id="footer" class="bg-[#111111] text-white text-xl">
+      <section
+        class="max-w-4xl mx-auto p-4 flex flex-col sm:flex-row sm:justify-between"
+      >
+        <address>
+          <h2>Landon Prince's Personal Website</h2>
+          Vanderbilt University<br />
+          Dallas,TX | Nashville, TN<br />
+          Email: <a href="landoncprince@gmail.com">landoncprince@gmail.com</a
+          ><br />
+          Phone: <a href="+12149848523">(214) 984-8523</a>
+        </address>
+      </section>
+    </footer>
   </body>
 </html>
