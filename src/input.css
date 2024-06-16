@@ -154,7 +154,7 @@
 .main__btn {
   font-size: 1.2rem;
   font-weight: 500;
-  background-image: linear-gradient(to top, #ff2e4a 0%, #ff2e4a 100%);
+  background-color: #ff2e4a;
   padding: 14px 32px;
   border: none;
   border-radius: 4px;
@@ -191,4 +191,57 @@
 
 .main__btn:hover:after {
   width: 100%;
+}
+
+.scroller {
+  max-width: 56rem;
+}
+
+.scroller__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent,
+    white 20%,
+    white 80%,
+    transparent
+  );
+  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+
+[data-animated="true"] .scroller__inner {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 2rem));
+  }
+}
+
+.move-up {
+  position: relative;
+  top: 1px;
+}
+
+.font-c {
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  font-size: 2;
+}
+
+.card-grow {
+  transition: width 0.5s ease; /* Adjust the duration and easing as needed */
+}
+
+.card-grow:hover {
+  width: 500%;
 }

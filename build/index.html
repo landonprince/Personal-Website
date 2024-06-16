@@ -35,17 +35,17 @@
           <nav class="hidden sm:block space-x-8 text-xl" aria-label="main">
             <a
               href="#aboutme"
-              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
               >About Me</a
             >
             <a
               href="#projects"
-              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
               >Projects</a
             >
             <a
               href="#contact"
-              class="hover:text-[#FF2E4A] transition-all duration-100 ease-in-out"
+              class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
               >Contact</a
             >
           </nav>
@@ -89,13 +89,14 @@
         >
           <article class="w-full sm:w-1/2">
             <h2
-              class="max-w-md text-4xl font-bold text-center sm:text-5xl sm:text-left text-slate-900 dark:text-white"
+              class="max-w-md font-bold text-center sm:text-left text-slate-900 dark:text-white"
+              style="font-size: 3.6rem; line-height: 1"
             >
-              Hello, I'm
+              Hi, I'm
               <span class="gradient-text">Landon</span>
             </h2>
             <p
-              class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-[#b8b8b8]"
+              class="max-w-md text-2xl mt-4 text-center sm:text-left text-slate-700 dark:text-gray-300"
             >
               <span>W</span><span>e</span><span>l</span><span>c</span
               ><span>o</span><span>m</span><span>e</span><span> </span
@@ -104,7 +105,21 @@
               ><span>e</span><span>b</span><span>s</span><span>i</span
               ><span>t</span><span>e</span>
             </p>
-            <button class="main__btn"><a href="/">About Me</a></button>
+            <button class="main__btn">
+              <a href="/">About Me</a>
+            </button>
+            <a
+              href="#github"
+              class="text-[#FF2E4A] transition-all duration-200 ease-in-out hover:text-[#4caf50] p-1"
+              style="position: relative; top: 17px"
+              ><i class="fa-brands fa-square-github fa-4x"></i>
+            </a>
+            <a
+              href="#linkedin"
+              class="text-[#FF2E4A] transition-all duration-200 ease-in-out hover:text-[#4caf50]"
+              style="position: relative; top: 17px"
+              ><i class="fa-brands fa-linkedin fa-4x"></i>
+            </a>
           </article>
           <img
             class="w-full sm:w-5/12"
@@ -122,13 +137,14 @@
           />
           <article class="w-full sm:w-1/2">
             <h2
-              class="max-w-md text-4xl font-bold text-center sm:text-6xl sm:text-right text-slate-900 dark:text-white"
+              class="max-w-md font-bold text-center sm:text-right text-slate-900 dark:text-white"
+              style="font-size: 3.6rem; line-height: 1.1"
             >
               Full-Stack
               <span class="gradient-text">Developer</span>
             </h2>
             <p
-              class="max-w-md text-2xl mt-4 text-center sm:text-right text-slate-700 dark:text-[#b8b8b8]"
+              class="max-w-md text-2xl mt-4 text-center sm:text-right text-slate-700 dark:text-gray-300"
             >
               <span>S</span><span>e</span><span>e</span><span> </span
               ><span>my</span><span> </span><span>p</span><span>r</span
@@ -152,30 +168,45 @@
           <div
             class="flex justify-between w-full max-w-4xl text-[#FF2E4A] text-5xl"
           >
-            <i
-              class="fa-brands fa-python hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-java hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-solid fa-c hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-js hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-react hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-html5 hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-css3-alt hover:rotate-12 transition-transform duration-300"
-            ></i>
-            <i
-              class="fa-brands fa-unity hover:rotate-12 transition-transform duration-300"
-            ></i>
+            <div class="scroller">
+              <ul class="tag-list scroller__inner">
+                <li class="fa-brands fa-python"></li>
+                <li class="fa-brands fa-java"></li>
+                <li class="fa-brands fa-react"></li>
+                <li class="fa-brands fa-html5"></li>
+                <li class="fa-brands fa-js"></li>
+                <li class="font-bold move-up font-c">C++</li>
+                <li class="fa-brands fa-unity"></li>
+                <li class="fa-brands fa-css3-alt"></li>
+
+                <li class="font-bold move-up font-c">C#</li>
+                <li class="fa-brands fa-rust"></li>
+                <li class="font-bold move-up font-c">C</li>
+                <li class="fa-brands fa-golang"></li>
+              </ul>
+            </div>
+            <script>
+              const scrollers = document.querySelectorAll(".scroller");
+              if (
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+              ) {
+                addAnimation();
+              }
+              function addAnimation() {
+                scrollers.forEach((scroller) => {
+                  scroller.setAttribute("data-animated", true);
+
+                  const scrollerInner =
+                    scroller.querySelector(".scroller__inner");
+                  const scrollerContent = Array.from(scrollerInner.children);
+                  scrollerContent.forEach((item) => {
+                    const duplicatedItem = item.cloneNode(true);
+                    duplicatedItem.setAttribute("aria-hidden", true);
+                    scrollerInner.appendChild(duplicatedItem);
+                  });
+                });
+              }
+            </script>
           </div>
         </div>
       </section>
@@ -192,68 +223,108 @@
         >
           About Me
         </h2>
-        <ul
-          class="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8"
+        <div
+          class="max-w-4xl mx-auto bg-white dark:bg-[#252525] rounded-xl shadow-xl overflow-hidden mt-12 transition-transform duration-200 ease-in-out hover:scale-105"
         >
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img src="./img/photo-512 (4).png" alt="test" class="w-1/2 mb-6" />
-            <h3 class="text-3xl text-center text-slate-900 dark:text-white">
-              Pixalyze®
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
-            >
-              C++
-            </p>
-            <p
-              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              affordable exploration
-            </p>
-          </li>
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img src="./img/joystick-512.png" alt="test" class="w-1/2 mb-6" />
-            <h3 class="text-3xl text-center text-slate-900 dark:text-white">
-              PySlice®
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
-            >
-              Python
-            </p>
-            <p
-              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              affordable exploration
-            </p>
-          </li>
-          <li
-            class="w-2/3 sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img
-              src="./img/speech-bubble-2-512.png"
-              alt="test"
-              class="w-1/2 mb-6"
-            />
-            <h3 class="text-3xl text-center text-slate-900 dark:text-white">
-              ChatFlow®
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
-            >
-              Java
-            </p>
-            <p
-              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
-            >
-              affordable exploration
-            </p>
-          </li>
-        </ul>
+          <div class="sm:flex">
+            <div class="sm:w-1/3">
+              <img
+                class="w-full h-full object-cover"
+                src="./img/IMG_0348[811].jpg"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="sm:w-2/3 p-6">
+              <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Quick Facts
+              </h2>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                <span class="font-bold text-2xl text-[#FF2E4A]"
+                  ><i class="fa-solid fa-house"></i> Hometown:</span
+                >
+                <span class="text-xl">Dallas, Texas</span><br />
+                <span class="font-bold text-2xl text-[#FF2E4A]"
+                  ><i class="fa-solid fa-graduation-cap"></i> Education:</span
+                >
+                <span class="text-xl">Vanderbilt University</span><br />
+                <span class="font-bold text-2xl text-[#FF2E4A]"
+                  ><i class="fa-solid fa-computer"></i> Major:</span
+                >
+                <span class="text-xl">Computer Science</span><br />
+                <span class="font-bold text-2xl text-[#FF2E4A]"
+                  ><i class="fa-solid fa-signature"></i> Minor:</span
+                >
+                <span class="text-xl">Business</span><br />
+                <span class="font-bold text-2xl text-[#FF2E4A]"
+                  ><i class="fa-solid fa-trophy"></i> Awards:</span
+                >
+                <span class="text-xl">Business</span><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Card 1 -->
+        <div
+          class="max-w-4xl mx-auto bg-white dark:bg-[#252525] rounded-xl shadow-xl overflow-hidden mt-8"
+        >
+          <div class="sm:flex">
+            <div class="sm:w-1/3">
+              <img
+                class="w-full h-full object-cover"
+                src="./img/IMG_1234.jpg"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="sm:w-2/3 p-6">
+              <h2
+                class="text-2xl font-bold text-gray-900 dark:text-[#FF2E4A] mb-4"
+              >
+                Skills and Interests
+              </h2>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                I possess a diverse skill set encompassing various programming
+                languages such as Python, Java, and JavaScript. My interests lie
+                in artificial intelligence, machine learning, and data science.
+                I enjoy solving complex problems and am passionate about
+                contributing to open-source projects. Outside of academics, I am
+                an avid chess player and enjoy hiking and exploring nature.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Card 2 -->
+        <div
+          class="max-w-4xl mx-auto bg-white dark:bg-[#252525] rounded-xl shadow-xl overflow-hidden mt-8"
+        >
+          <div class="sm:flex">
+            <div class="sm:w-1/3">
+              <img
+                class="w-full h-full object-cover"
+                src="./img/IMG_5678.jpg"
+                alt="Placeholder image"
+              />
+            </div>
+            <div class="sm:w-2/3 p-6">
+              <h2
+                class="text-2xl font-bold text-gray-900 dark:text-[#FF2E4A] mb-4"
+              >
+                Projects and Achievements
+              </h2>
+              <p class="text-gray-700 dark:text-gray-300 mb-6">
+                I have successfully led and participated in numerous projects,
+                including developing a web application for managing university
+                events and creating a machine learning model for predicting
+                stock market trends. My achievements include winning the
+                Hackathon Championship at Vanderbilt and being recognized as a
+                top performer in various coding competitions. I continuously
+                seek opportunities to apply my skills in real-world scenarios
+                and contribute to impactful projects.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!---------- PROJECTS ------------------------>
@@ -268,45 +339,143 @@
         >
           Projects
         </h2>
-        <div
-          class="max-w-4xl mx-auto bg-white dark:bg-[#252525] rounded-xl shadow-xl overflow-hidden mt-12"
+        <ul
+          class="list-none mx-auto mt-12 mb-8 flex flex-col sm:flex-row items-center gap-8"
         >
-          <div class="sm:flex">
-            <div class="sm:w-1/3">
-              <img
-                class="w-full h-full object-cover"
-                src="./img/IMG_0348[811].jpg"
-                alt="Placeholder image"
-              />
-            </div>
-            <div class="sm:w-2/3 p-6">
-              <h2
-                class="text-2xl font-bold text-gray-900 dark:text-[#FF2E4A] mb-4"
-              >
-                Landon Prince
-              </h2>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Hello there! I am an undergraduate at Vanderbilt University
-                majoring in Computer Science and minoring in business. Driven by
-                a profound passion for computer science, I am dedicated to
-                deepening my expertise and contributing innovative solutions in
-                the technology sector. My academic pursuits in computer science
-                are matched by hands-on experience in software development and a
-                fervent commitment to continuous learning. Whether working on
-                cutting-edge projects or engaging with the latest in functional
-                programming and cloud technologies, I bring a blend of
-                curiosity, analytical thinking, and a collaborative spirit to
-                every endeavor.
-              </p>
-            </div>
-          </div>
-        </div>
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img src="./img/photo-512 (4).png" alt="test" class="w-1/3 mb-6" />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              Pixalyze
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              C++
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img src="./img/joystick-512.png" alt="test" class="w-1/3 mb-6" />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              PySlice
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              Python
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img
+              src="./img/speech-bubble-2-512.png"
+              alt="test"
+              class="w-1/3 mb-6"
+            />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              ChatFlow
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              Java
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+        </ul>
+        <ul
+          class="list-none mx-auto mb-8 flex flex-col sm:flex-row items-center gap-8"
+        >
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img src="./img/photo-512 (4).png" alt="test" class="w-1/3 mb-6" />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              Image To ASCII
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              C++
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img src="./img/joystick-512.png" alt="test" class="w-1/3 mb-6" />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              MadLibs
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              Python
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+          <li
+            class="w-2/3 card-grow sm:w-5/6 flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-2 rounded-3xl shadow-xl transition-transform duration-200 ease-in-out"
+          >
+            <img
+              src="./img/speech-bubble-2-512.png"
+              alt="test"
+              class="w-1/3 mb-6"
+            />
+            <h3
+              class="text-3xl font-bold text-center text-slate-900 dark:text-white"
+            >
+              My Website
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400"
+            >
+              Java
+            </p>
+            <p
+              class="sm:hidden text-2xl text-center mt-2 text-slate-500 dark:text-slate-400"
+            >
+              affordable exploration
+            </p>
+          </li>
+        </ul>
       </section>
-      <!-- <img
-        class="w-full h-full object-cover"
-        src="https://github-readme-stats.vercel.app/api/top-langs/?username=landonprince&layout=compact&bg_color=0c0c0c&title_color=ffffff&text_color=ffffff&hide_border=true"
-        alt="Placeholder image"
-      /> -->
 
       <!---------- CONTACT ------------------------>
 
