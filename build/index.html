@@ -132,7 +132,7 @@
               ><span>e</span><span>b</span><span>s</span><span>i</span
               ><span>t</span><span>e</span>
             </p>
-            <a href="#aboutme" class="main__btn">
+            <a href="#aboutme" class="main__btn mt-8">
               <span>About Me</span>
             </a>
             <a
@@ -159,7 +159,7 @@
             </a>
           </article>
           <img
-            class="w-full sm:w-5/12"
+            class="w-full sm:w-5/12 pt-1"
             src="./img/undraw_version_control_re_mg66.svg"
             alt="test"
           />
@@ -168,7 +168,7 @@
           class="card hero-hover transition-transform duration-200 ease-in-out hover:scale-105 bg-white dark:bg-[#252525] p-6 rounded-lg shadow-lg flex flex-row gap-8 sm:flex-row"
         >
           <img
-            class="w-full sm:w-1/2"
+            class="w-full sm:w-1/2 pt-2"
             src="./img/undraw_mobile_application_re_13u3.svg"
             alt="test"
           />
@@ -191,11 +191,11 @@
               ><span>w</span>
             </p>
             <div class="flex justify-center flex-col sm:justify-end">
-              <a href="#portfolio" class="main__btn">
+              <a href="#portfolio" class="main__btn mt-8">
                 <span>Portfolio</span>
               </a>
               <img
-                class="w-full h-full object-cover pt-3 pb-1"
+                class="w-full h-full object-cover pt-3 pb-2"
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=landonprince&layout=compact&bg_color=1b1b1b&title_color=ffffff&text_color=ffffff&hide_border=true"
                 alt="Placeholder image"
               />
@@ -285,32 +285,26 @@
                 <div>
                   <a
                     @click="openSection === 1 ? openSection = null : openSection = 1"
-                    class="main__btn w-full"
+                    class="main__btn w-full mt-6"
                   >
                     <span>High School</span>
                   </a>
                   <div
                     x-show="openSection === 1"
-                    class="text-gray-700 dark:text-gray-300 pt-4"
+                    class="text-gray-700 dark:text-gray-300 pt-4 mt-2"
                   >
-                    Hello! I am an undergraduate at Vanderbilt University
-                    majoring in Computer Science and minoring in business.
-                    Driven by a profound passion for computer science, I am
-                    dedicated to deepening my expertise and contributing
-                    innovative solutions in the technology sector. My academic
-                    pursuits in computer science are matched by hands-on
-                    experience in software development and a fervent commitment
-                    to continuous learning. Whether working on cutting-edge
-                    projects or engaging with the latest in functional
-                    programming and cloud technologies, I bring a blend of
-                    curiosity, analytical thinking, and a collaborative spirit
-                    to every endeavor.
+                    I attended Highland Park High School in my hometown of
+                    Dallas, Texas. Throughout my High School career, I was
+                    dedicated to expanding my skills, especially in regards to
+                    computer science. In total, I took eight AP classes, seven
+                    of which I got a score of 4 and above. In May of 2022, I
+                    graduated Magna Cum Laude with a GPA of 4.23/5.
                   </div>
                 </div>
                 <div>
                   <a
                     @click="openSection === 2 ? openSection = null : openSection = 2"
-                    class="main__btn w-full"
+                    class="main__btn w-full mt-4"
                   >
                     <span>College</span>
                   </a>
@@ -318,19 +312,16 @@
                     x-show="openSection === 2"
                     class="mt-2 text-gray-700 dark:text-gray-300 pt-4"
                   >
-                    <!-- Add your facts here -->
-                    <ul class="list-disc list-inside">
-                      <li>Major: Computer Science</li>
-                      <li>Minor: Business</li>
-                      <li>University: Vanderbilt University</li>
-                      <li>Passion: Technology and Innovation</li>
-                    </ul>
+                    Majoring in computer science and minoring in business, I
+                    began my collegiate journey at Vanderbilt University in
+                    August of 2022. As of June 2024, I am incoming junior and is
+                    expected to graduate in May of 2026
                   </div>
                 </div>
-                <div>
+                <div class="pb-2">
                   <a
                     @click="openSection === 3 ? openSection = null : openSection = 3"
-                    class="main__btn w-full"
+                    class="main__btn w-full mt-4"
                   >
                     <span>Beyond</span>
                   </a>
@@ -364,7 +355,7 @@
               <h2 class="text-5xl font-bold text-gray-900 gradient-text mb-4">
                 Quick Facts
               </h2>
-              <p class="text-gray-700 dark:text-gray-300 leading-10">
+              <p class="text-gray-700 dark:text-gray-300 leading-10 mt-6">
                 <span class="font-semibold text-2xl text-white">
                   Hometown:
                 </span>
@@ -629,7 +620,7 @@
             </div>
           </div>
         </div>
-        <a href="path/to/your-file.pdf" download class="main__btn w-full">
+        <a href="path/to/your-file.pdf" download class="main__btn w-full mt-8">
           <span>Download Resume</span>
         </a>
       </section>
@@ -650,7 +641,7 @@
           class="list-none justify-center mx-auto mt-12 mb-4 flex flex-col sm:flex-row sm:flex-wrap items-center gap-2"
         >
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/photo-512 (4).png"
@@ -685,7 +676,7 @@
             </p>
           </li>
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/keyboard-2-512.png"
@@ -721,7 +712,7 @@
             </p>
           </li>
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/website-optimization-512.png "
@@ -757,7 +748,7 @@
             </p>
           </li>
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/edit-property-512.png"
@@ -794,7 +785,7 @@
             </p>
           </li>
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/speech-bubble-2-512.png"
@@ -830,7 +821,7 @@
             </p>
           </li>
           <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-6 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
               src="./img/picture-3-512.png"
@@ -866,7 +857,7 @@
             </p>
           </li>
         </ul>
-        <a href="/" class="main__btn -top-3 w-full">
+        <a href="/" class="main__btn -top-3 w-full mt-8">
           <span>All Projects</span>
         </a>
       </section>
@@ -908,7 +899,7 @@
             required
             class="w-full bg-[#252525] shadow-xl text-white text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none"
           ></textarea>
-          <a href="/" class="main__btn -top-3">
+          <a href="/" class="main__btn -top-3 mt-8">
             <span>Send Message</span>
           </a>
         </form>
