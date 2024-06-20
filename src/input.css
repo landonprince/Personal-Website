@@ -152,7 +152,10 @@
 }
 
 .main__btn {
-  font-size: 1.2rem;
+  display: inline-flex; /* Ensure the button respects the padding and centers text */
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
   font-weight: 500;
   background-color: #ff2e4a;
   padding: 14px 32px;
@@ -163,14 +166,9 @@
   cursor: pointer;
   position: relative;
   transition: all 0.35s;
+  text-decoration: none; /* Ensure no underline for link */
   outline: none;
-}
-
-.main__btn a {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  text-decoration: none;
+  overflow: hidden; /* Ensure the after pseudo-element stays within the button */
 }
 
 .main__btn:after {
@@ -183,6 +181,7 @@
   background: #c02237;
   transition: all 0.35s;
   border-radius: 4px;
+  z-index: 0; /* Ensure the pseudo-element is behind the text */
 }
 
 .main__btn:hover {
@@ -191,6 +190,11 @@
 
 .main__btn:hover:after {
   width: 100%;
+}
+
+.main__btn span {
+  position: relative;
+  z-index: 1; /* Ensure the text is above the pseudo-element */
 }
 
 .scroller {
@@ -258,3 +262,20 @@
 .custom-shape-divider-bottom-1718683941 .shape-fill {
   fill: #ff2e4a;
 } */
+
+.small-dot {
+  font-size: 10px; /* Adjust the size as needed */
+}
+.square {
+  width: 42px; /* Same as button height */
+  height: 42px; /* Same as button height */
+  background-color: #ff2e4a;
+  border-radius: 4px;
+  margin-left: 8px; /* Small gap between button and square */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+}

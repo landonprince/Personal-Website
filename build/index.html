@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/07ac5fa805.js"
       crossorigin="anonymous"
     ></script>
+    <script src="js/main.js" defer></script>
   </head>
 
   <!---------- WEBSITE ------------------------>
@@ -27,12 +28,12 @@
         </h1>
         <div>
           <button
-            id="mobile-open-button"
-            class="text-3xl sm:hidden focus:outline-none"
+            id="hamburger-button"
+            class="text-3xl md:hidden cursor-pointer"
           >
             &#9776;
           </button>
-          <nav class="hidden sm:block space-x-8 text-xl" aria-label="main">
+          <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
             <a
               href="#aboutme"
               class="hover:text-[#FF2E4A] transition-all duration-200 ease-in-out"
@@ -50,6 +51,32 @@
             >
           </nav>
         </div>
+      </section>
+      <section
+        id="mobile-menu"
+        class="absolute top-0 bg-black w-full text-5xl flex-col justify-content-center origin-top animate-open-menu hidden"
+      >
+        <button class="text-8xl self-end px-6">&times;</button>
+        <nav
+          class="flex flex-col min-h-screen items-center py-8"
+          aria-label="mobile"
+        >
+          <a href="#hero" class="w-full text-center py-6 hover:opacity-90"
+            >Home</a
+          >
+          <a href="#aboutme" class="w-full text-center py-6 hover:opacity-90"
+            >About Me</a
+          >
+          <a href="#portfolio" class="w-full text-center py-6 hover:opacity-90"
+            >Portfolio</a
+          >
+          <a href="#contact" class="w-full text-center py-6 hover:opacity-90"
+            >Contact</a
+          >
+          <a href="#footer" class="w-full text-center py-6 hover:opacity-90"
+            >Legal</a
+          >
+        </nav>
       </section>
     </header>
     <div class="custom-shape-divider-top-1716576130">
@@ -105,22 +132,30 @@
               ><span>e</span><span>b</span><span>s</span><span>i</span
               ><span>t</span><span>e</span>
             </p>
-            <button class="main__btn">
-              <a href="#aboutme">About Me</a>
-            </button>
-            <a
-              href="https://github.com/landonprince"
-              target="_blank"
-              class="text-[#FF2E4A] transition-all duration-200 ease-in-out hover:text-[#c02237] p-1"
-              style="position: relative; top: 16px"
-            >
-              <i class="fa-brands fa-square-github fa-4x"></i>
+            <a href="#aboutme" class="main__btn">
+              <span>About Me</span>
             </a>
             <a
-              href="#linkedin"
-              class="text-[#FF2E4A] transition-all duration-200 ease-in-out hover:text-[#c02237]"
-              style="position: relative; top: 16px"
-              ><i class="fa-brands fa-linkedin fa-4x"></i>
+              href="https://github.com/landonprince"
+              class="main__btn w-2 ml-1"
+            >
+              <span
+                ><i
+                  class="fa-brands fa-github fa-2xl"
+                  style="position: relative; right: 1px; top: 1px"
+                ></i
+              ></span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/landon-prince-4bb945256/"
+              class="main__btn w-2 ml-1"
+            >
+              <span
+                ><i
+                  class="fa-brands fa-linkedin-in fa-2xl"
+                  style="position: relative; top: 3px; right: 1px"
+                ></i
+              ></span>
             </a>
           </article>
           <img
@@ -137,7 +172,7 @@
             src="./img/undraw_mobile_application_re_13u3.svg"
             alt="test"
           />
-          <article class="w-full sm:w-1/2">
+          <article class="w-full sm:w-1/2 overflow-hidden">
             <h2
               class="max-w-md font-bold text-center sm:text-right text-slate-900 dark:text-white"
               style="font-size: 3.6rem; line-height: 1.1"
@@ -156,9 +191,11 @@
               ><span>w</span>
             </p>
             <div class="flex justify-center flex-col sm:justify-end">
-              <button class="main__btn"><a href="/">Portfolio</a></button>
+              <a href="#portfolio" class="main__btn">
+                <span>Portfolio</span>
+              </a>
               <img
-                class="w-full h-full object-cover pt-5"
+                class="w-full h-full object-cover pt-3 pb-1"
                 src="https://github-readme-stats.vercel.app/api/top-langs/?username=landonprince&layout=compact&bg_color=1b1b1b&title_color=ffffff&text_color=ffffff&hide_border=true"
                 alt="Placeholder image"
               />
@@ -238,27 +275,85 @@
               />
             </div>
             <div class="sm:w-2/3 p-6">
-              <h2
-                class="text-4xl font-bold text-gray-900 dark:text-[#FF2E4A] mb-4"
-              >
+              <h2 class="text-5xl font-bold text-gray-900 gradient-text mb-6">
                 Landon Prince
               </h2>
-              <p class="text-gray-700 dark:text-gray-300 mb-6">
-                Hello! I am an undergraduate at Vanderbilt University majoring
-                in Computer Science and minoring in business. Driven by a
-                profound passion for computer science, I am dedicated to
-                deepening my expertise and contributing innovative solutions in
-                the technology sector. My academic pursuits in computer science
-                are matched by hands-on experience in software development and a
-                fervent commitment to continuous learning. Whether working on
-                cutting-edge projects or engaging with the latest in functional
-                programming and cloud technologies, I bring a blend of
-                curiosity, analytical thinking, and a collaborative spirit to
-                every endeavor.
+              <p class="text-gray-300 text-2xl">
+                Learn about my academic journey
               </p>
+              <div x-data="{ openSection: null }">
+                <div>
+                  <a
+                    @click="openSection === 1 ? openSection = null : openSection = 1"
+                    class="main__btn w-full"
+                  >
+                    <span>High School</span>
+                  </a>
+                  <div
+                    x-show="openSection === 1"
+                    class="text-gray-700 dark:text-gray-300 pt-4"
+                  >
+                    Hello! I am an undergraduate at Vanderbilt University
+                    majoring in Computer Science and minoring in business.
+                    Driven by a profound passion for computer science, I am
+                    dedicated to deepening my expertise and contributing
+                    innovative solutions in the technology sector. My academic
+                    pursuits in computer science are matched by hands-on
+                    experience in software development and a fervent commitment
+                    to continuous learning. Whether working on cutting-edge
+                    projects or engaging with the latest in functional
+                    programming and cloud technologies, I bring a blend of
+                    curiosity, analytical thinking, and a collaborative spirit
+                    to every endeavor.
+                  </div>
+                </div>
+                <div>
+                  <a
+                    @click="openSection === 2 ? openSection = null : openSection = 2"
+                    class="main__btn w-full"
+                  >
+                    <span>College</span>
+                  </a>
+                  <div
+                    x-show="openSection === 2"
+                    class="mt-2 text-gray-700 dark:text-gray-300 pt-4"
+                  >
+                    <!-- Add your facts here -->
+                    <ul class="list-disc list-inside">
+                      <li>Major: Computer Science</li>
+                      <li>Minor: Business</li>
+                      <li>University: Vanderbilt University</li>
+                      <li>Passion: Technology and Innovation</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <a
+                    @click="openSection === 3 ? openSection = null : openSection = 3"
+                    class="main__btn w-full"
+                  >
+                    <span>Beyond</span>
+                  </a>
+                  <div
+                    x-show="openSection === 3"
+                    class="mt-2 text-gray-700 dark:text-gray-300 pt-4"
+                  >
+                    <!-- Add your experience here -->
+                    <ul class="list-disc list-inside">
+                      <li>Software Development Intern at XYZ Company</li>
+                      <li>Research Assistant in Functional Programming Lab</li>
+                      <li>Project Lead for Cloud Technology Initiatives</li>
+                      <li>Volunteer at Local Tech Community Events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Include Alpine.js for the interactive part -->
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- Additional Card 1 -->
         <div
@@ -266,66 +361,229 @@
         >
           <div class="sm:flex">
             <div class="sm:w-2/3 p-6">
-              <h2 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 class="text-5xl font-bold text-gray-900 gradient-text mb-4">
                 Quick Facts
               </h2>
               <p class="text-gray-700 dark:text-gray-300 leading-10">
-                <span class="font-bold text-2xl text-[#FF2E4A]">
+                <span class="font-semibold text-2xl text-white">
                   Hometown:
                 </span>
                 <span class="text-xl">Dallas, Texas</span><br />
-                <span class="font-bold text-2xl text-[#FF2E4A]">
+                <span class="font-semibold text-2xl text-white">
                   Education:
                 </span>
                 <span class="text-xl">Vanderbilt University</span><br />
-                <span class="font-bold text-2xl text-[#FF2E4A]">
-                  Relevant Coursework:
-                </span>
-                <span id="coursework" class="hidden">
-                  Data Structures & Algorithms, Intermediate Software Design,
-                  Discrete Structures, Programming Languages, Digital Systems,
-                  Linear Algebra, Multivariable Calculus
-                </span>
-                <button
-                  id="courseworkButton"
-                  onclick="toggleVisibility('coursework', 'courseworkButton')"
-                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-lg"
-                >
-                  Show
-                </button>
-                <br />
-                <span class="font-bold text-2xl text-[#FF2E4A]"> Major: </span>
+                <span class="font-semibold text-2xl text-white"> Major: </span>
                 <span class="text-xl">Computer Science (B.S.)</span><br />
-                <span class="font-bold text-2xl text-[#FF2E4A]"> Minor: </span>
+                <span class="font-semibold text-2xl text-white"> Minor: </span>
                 <span class="text-xl">Business</span><br />
-                <span class="font-bold text-2xl text-[#FF2E4A]"> Honors: </span>
+                <span class="font-semibold text-2xl text-white"> Honors: </span>
                 <span id="honors" class="hidden">
-                  Deans List (2x), Gratuated Magna Cum Laude (GPA: 4.23/5), AP
-                  Scholar with Distinction, Computer Science National Honor
-                  Society
+                  <br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Deans List <br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Gratuated Magna Cum Laude<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  AP Scholar with Distinction <br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  National Honor Society<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  CS National Honor Society
                 </span>
                 <button
                   id="honorsButton"
                   onclick="toggleVisibility('honors', 'honorsButton')"
-                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-lg"
+                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-sm"
                 >
                   Show
                 </button>
                 <br />
-                <span class="font-bold text-2xl text-[#FF2E4A]"> Skills: </span>
+                <span class="font-semibold text-2xl text-white"> Skills: </span>
                 <span id="skills" class="hidden">
-                  Software Development, Computer Engineering, Data Structures &
-                  Algorithms, Programming Languages, Game Development, Object
-                  Oriented Programming, Software Design Patterns
+                  <br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Software Development<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Computer Engineering<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Data Structures & Algorithms<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Programming Languages<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898; </span
+                  >Game Development<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Object Oriented Programming<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Software Design Patterns
                 </span>
                 <button
                   id="skillsButton"
                   onclick="toggleVisibility('skills', 'skillsButton')"
-                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-lg"
+                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-sm"
                 >
                   Show
                 </button>
                 <br />
+                <span class="font-semibold text-2xl text-white">
+                  Relevant Coursework:
+                </span>
+                <span id="coursework" class="hidden">
+                  <br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;
+                  </span>
+                  Data Structures & Algorithms<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Intermediate Software Design<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Discrete Structures<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Programming Languages<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Digital Systems<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Linear Algebra<br /><span
+                    style="
+                      font-size: 8px;
+                      position: relative;
+                      top: -2px;
+                      padding-right: 12px;
+                    "
+                    >&#9898;</span
+                  >
+                  Multivariable Calculus
+                </span>
+                <button
+                  id="courseworkButton"
+                  onclick="toggleVisibility('coursework', 'courseworkButton')"
+                  class="py-0 px-3 text-lg bg-[#1b1b1b] rounded-sm"
+                >
+                  Show
+                </button>
               </p>
               <script>
                 let currentlyVisibleElementId = null;
@@ -365,12 +623,15 @@
             <div class="sm:w-11/12">
               <img
                 class="w-full h-full object-cover"
-                src="./img/R (3).jpg"
+                src="./img/R (4).jpg"
                 alt="Placeholder image"
               />
             </div>
           </div>
         </div>
+        <a href="path/to/your-file.pdf" download class="main__btn w-full">
+          <span>Download Resume</span>
+        </a>
       </section>
 
       <!---------- PROJECTS ------------------------>
@@ -386,7 +647,7 @@
           Portfolio
         </h2>
         <ul
-          class="list-none justify-center mx-auto mt-12 mb-8 flex flex-col sm:flex-row sm:flex-wrap items-center gap-2"
+          class="list-none justify-center mx-auto mt-12 mb-4 flex flex-col sm:flex-row sm:flex-wrap items-center gap-2"
         >
           <li
             class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
@@ -397,7 +658,7 @@
               class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
             />
             <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
             >
               Pixalyze
             </h3>
@@ -414,24 +675,30 @@
               process images. This application primarily utilizes the OpenCV
               library to rapidly parse and manipulate images in real-time.
               <br />
-              <button class="main__btn"><a href="/">Github</a></button>
+              <a
+                href="https://github.com/landonprince/Pixalyze"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
             </p>
           </li>
           <li
             class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
-              src="./img/joystick-512.png"
+              src="./img/keyboard-2-512.png"
               alt="test"
               class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
             />
             <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
             >
               PySlice
             </h3>
             <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400 transition duration-200 group-hover:hidden"
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-gray-300 transition duration-200 group-hover:hidden"
             >
               Python | Pygame
             </p>
@@ -439,134 +706,169 @@
             <p
               class="hidden text-lg dark:text-gray-300 text-center px-5 text-slate-500 transition duration-200 group-hover:block"
             >
-              PySlice is an addictingly fun 2D platformer built entirely with
-              Python. Specifically, the Pygame library was utilized for the
-              development of this game. Play as a katana-wielding ninja and
-              defeat hordes of enemies.
-              <br />
-              <button class="main__btn"><a href="/">Github</a></button>
-            </p>
-          </li>
-          <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img
-              src="./img/speech-bubble-2-512.png"
-              alt="test"
-              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
-            />
-            <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
-            >
-              ChatFlow
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400 transition duration-200 group-hover:hidden"
-            >
-              Java
-            </p>
-
-            <p
-              class="hidden text-lg dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
-            >
               Pixalyze is an easy-to-use command-line application. It allows for
               the use of an ever-growing collection of commands to analyze and
               process images. This application primarily utilizes the OpenCV
               library to rapidly parse and manipulate images in real-time.
               <br />
-              <button class="main__btn"><a href="/">Github</a></button>
+              <a
+                href="https://github.com/landonprince/PySlice"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
             </p>
           </li>
           <li
             class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
           >
             <img
-              src="./img/photo-512 (4).png"
+              src="./img/website-optimization-512.png "
               alt="test"
               class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
             />
             <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
-            >
-              Image To ASCII
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400 transition duration-200 group-hover:hidden"
-            >
-              C++
-            </p>
-
-            <p
-              class="hidden text-lg dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
-            >
-              Pixalyze is an easy-to-use command-line application. It allows for
-              the use of an ever-growing collection of commands to analyze and
-              process images. This application primarily utilizes the OpenCV
-              library to rapidly parse and manipulate images in real-time.
-              <br />
-              <button class="main__btn"><a href="/">Github</a></button>
-            </p>
-          </li>
-          <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img
-              src="./img/joystick-512.png"
-              alt="test"
-              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
-            />
-            <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
-            >
-              Mad Libs Generator
-            </h3>
-            <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400 transition duration-200 group-hover:hidden"
-            >
-              Python
-            </p>
-
-            <p
-              class="hidden text-lg dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
-            >
-              Pixalyze is an easy-to-use command-line application. It allows for
-              the use of an ever-growing collection of commands to analyze and
-              process images. This application primarily utilizes the OpenCV
-              library to rapidly parse and manipulate images in real-time.
-              <br />
-              <button class="main__btn"><a href="/">Github</a></button>
-            </p>
-          </li>
-          <li
-            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
-          >
-            <img
-              src="./img/speech-bubble-2-512.png"
-              alt="test"
-              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
-            />
-            <h3
-              class="text-3xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
             >
               Personal Website
             </h3>
             <p
-              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-zinc-400 transition duration-200 group-hover:hidden"
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-gray-300 transition duration-200 group-hover:hidden"
             >
-              Java
+              HTML | CSS | JavaScript
             </p>
 
             <p
-              class="hidden text-lg dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
+              class="hidden px-5 text-lg dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
             >
-              Pixalyze is an easy-to-use command-line application. It allows for
-              the use of an ever-growing collection of commands to analyze and
-              process images. This application primarily utilizes the OpenCV
-              library to rapidly parse and manipulate images in real-time.<br />
-              <button class="main__btn"><a href="/">Github</a></button>
+              My personal website (this website) displays my portfolio,
+              information about me, and my contact information in a visually
+              appealing manor. Tailwind CSS and NodeJS were used in addition to
+              vanilla HTML/CSS/JS to construct an elegant, responsive website.
+              <br />
+              <a
+                href="https://github.com/landonprince/Chat-Flow-Manager"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
+            </p>
+          </li>
+          <li
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+          >
+            <img
+              src="./img/edit-property-512.png"
+              alt="test"
+              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
+            />
+            <h3
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+            >
+              Mad Libs Generator
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-gray-300 transition duration-200 group-hover:hidden"
+            >
+              Java | JUnit
+            </p>
+
+            <p
+              class="hidden text-lg px-5 dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
+            >
+              Mad Libs Generator is a program that allows the player to generate
+              their own custom Mad Lib templates, and then fill in the blank
+              spaces to create fun stories. Players can choose the number of
+              sentences, frequency of blank spaces, and the overall theme of the
+              Mad Lib.
+              <br />
+              <a
+                href="https://github.com/landonprince/Image-To-ASCII-Converter"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
+            </p>
+          </li>
+          <li
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+          >
+            <img
+              src="./img/speech-bubble-2-512.png"
+              alt="test"
+              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
+            />
+            <h3
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+            >
+              ChatFlow Manager
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-gray-300 transition duration-200 group-hover:hidden"
+            >
+              Java | JUnit
+            </p>
+
+            <p
+              class="hidden text-lg px-5 dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
+            >
+              ChatFlow manager is a program that allows the user to store,
+              retrieve, and manipulate messages. There are two core components
+              to this program: the Message object that contains data and the
+              database object that holds a linked list of Message objects.
+              <br />
+              <a
+                href="https://github.com/landonprince/Mad-Libs-Generator"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
+            </p>
+          </li>
+          <li
+            class="group w-2/3 sm:w-[calc(50%-4px)] flex flex-col items-center bg-white dark:bg-[#252525] py-5 px-5 rounded-xl shadow-xl transition-transform duration-200 ease-in-out hover:scale-105"
+          >
+            <img
+              src="./img/picture-3-512.png"
+              alt="test"
+              class="w-1/3 mb-6 transition duration-200 group-hover:hidden"
+            />
+            <h3
+              class="text-4xl font-bold text-center text-slate-900 dark:text-white transition duration-200 group-hover:hidden"
+            >
+              Image To ASCII
+            </h3>
+            <p
+              class="hidden sm:block text-2xl text-center mt-2 text-slate-500 dark:text-gray-300 transition duration-200 group-hover:hidden"
+            >
+              C++ | CMake | OpenCV
+            </p>
+
+            <p
+              class="hidden text-lg px-5 dark:text-gray-300 text-center text-slate-500 transition duration-200 group-hover:block"
+            >
+              Image to ASCII is a program that uses the OpenCV library to allow
+              users to convert nearly any image to high-quality ASCII art. The
+              ASCII art is generated and returned in a text file. Simply enter
+              the file path of the image you want to convert and enjoy the ASCII
+              art. <br />
+              <a
+                href="https://github.com/landonprince/Personal-Website"
+                target="_blank"
+                class="main__btn"
+              >
+                <span>Github</span>
+              </a>
             </p>
           </li>
         </ul>
+        <a href="/" class="main__btn -top-3 w-full">
+          <span>All Projects</span>
+        </a>
       </section>
 
       <!---------- CONTACT ------------------------>
@@ -606,7 +908,9 @@
             required
             class="w-full bg-[#252525] shadow-xl text-white text-2xl sm:text-3xl p-3 rounded-xl border border-solid border-slate-900 dark:border-none"
           ></textarea>
-          <button class="main__btn"><a href="/">Send Message</a></button>
+          <a href="/" class="main__btn -top-3">
+            <span>Send Message</span>
+          </a>
         </form>
       </section>
     </main>
