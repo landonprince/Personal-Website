@@ -225,28 +225,6 @@
                 <li class="fa-brands fa-golang"></li>
               </ul>
             </div>
-            <script>
-              const scrollers = document.querySelectorAll(".scroller");
-              if (
-                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-              ) {
-                addAnimation();
-              }
-              function addAnimation() {
-                scrollers.forEach((scroller) => {
-                  scroller.setAttribute("data-animated", true);
-
-                  const scrollerInner =
-                    scroller.querySelector(".scroller__inner");
-                  const scrollerContent = Array.from(scrollerInner.children);
-                  scrollerContent.forEach((item) => {
-                    const duplicatedItem = item.cloneNode(true);
-                    duplicatedItem.setAttribute("aria-hidden", true);
-                    scrollerInner.appendChild(duplicatedItem);
-                  });
-                });
-              }
-            </script>
           </div>
         </div>
       </section>
@@ -291,7 +269,7 @@
                   </a>
                   <div
                     x-show="openSection === 1"
-                    class="text-gray-700 dark:text-gray-300 pt-4 mt-2"
+                    class="text-gray-700 dark:text-gray-300 pt-4"
                   >
                     I attended Highland Park High School in my hometown of
                     Dallas, Texas. Throughout my High School career, I was
@@ -310,12 +288,14 @@
                   </a>
                   <div
                     x-show="openSection === 2"
-                    class="mt-2 text-gray-700 dark:text-gray-300 pt-4"
+                    class="text-gray-700 dark:text-gray-300 pt-4"
                   >
                     Majoring in computer science and minoring in business, I
                     began my collegiate journey at Vanderbilt University in
-                    August of 2022. As of June 2024, I am incoming junior and is
-                    expected to graduate in May of 2026
+                    August of 2022. So far, I have acquired many skills and have
+                    taken many relevant courses (see Quick Facts) As of June
+                    2024, I am incoming junior and is expected to graduate in
+                    May of 2026.
                   </div>
                 </div>
                 <div class="pb-2">
@@ -327,15 +307,14 @@
                   </a>
                   <div
                     x-show="openSection === 3"
-                    class="mt-2 text-gray-700 dark:text-gray-300 pt-4"
+                    class="text-gray-700 dark:text-gray-300 pt-4"
                   >
-                    <!-- Add your experience here -->
-                    <ul class="list-disc list-inside">
-                      <li>Software Development Intern at XYZ Company</li>
-                      <li>Research Assistant in Functional Programming Lab</li>
-                      <li>Project Lead for Cloud Technology Initiatives</li>
-                      <li>Volunteer at Local Tech Community Events</li>
-                    </ul>
+                    After I graduate college, I plan to begin my career in
+                    software development. Driven by a profound passion for
+                    computer science, I am dedicated to deepening my expertise
+                    and contributing innovative solutions in the technology
+                    sector. I bring a blend of curiosity, analytical thinking,
+                    and a collaborative spirit to every endeavor.
                   </div>
                 </div>
               </div>
@@ -388,7 +367,7 @@
                     "
                     >&#9898;
                   </span>
-                  Gratuated Magna Cum Laude<br /><span
+                  Graduated Magna Cum Laude<br /><span
                     style="
                       font-size: 8px;
                       position: relative;
@@ -576,40 +555,6 @@
                   Show
                 </button>
               </p>
-              <script>
-                let currentlyVisibleElementId = null;
-
-                function toggleVisibility(elementId, buttonId) {
-                  var element = document.getElementById(elementId);
-                  var button = document.getElementById(buttonId);
-
-                  // Hide the currently visible element if it's different from the clicked one
-                  if (
-                    currentlyVisibleElementId &&
-                    currentlyVisibleElementId !== elementId
-                  ) {
-                    var currentElement = document.getElementById(
-                      currentlyVisibleElementId
-                    );
-                    var currentButton = document.querySelector(
-                      `button[onclick*="${currentlyVisibleElementId}"]`
-                    );
-                    currentElement.classList.add("hidden");
-                    currentButton.textContent = "Show";
-                  }
-
-                  // Toggle the clicked element
-                  if (element.classList.contains("hidden")) {
-                    element.classList.remove("hidden");
-                    button.textContent = "Hide";
-                    currentlyVisibleElementId = elementId;
-                  } else {
-                    element.classList.add("hidden");
-                    button.textContent = "Show";
-                    currentlyVisibleElementId = null;
-                  }
-                }
-              </script>
             </div>
             <div class="sm:w-11/12">
               <img
@@ -669,7 +614,7 @@
               <a
                 href="https://github.com/landonprince/Pixalyze"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
@@ -697,15 +642,16 @@
             <p
               class="hidden text-lg dark:text-gray-300 text-center px-5 text-slate-500 transition duration-200 group-hover:block"
             >
-              Pixalyze is an easy-to-use command-line application. It allows for
-              the use of an ever-growing collection of commands to analyze and
-              process images. This application primarily utilizes the OpenCV
-              library to rapidly parse and manipulate images in real-time.
+              Pyslice is an addictively fun 2D platformer made entirely with
+              Python. Play as a katana-wielding ninja to slice through your
+              enemies and traverse dangerous worlds. It utilizes the Pygame
+              library to provide a robust and seamless experience for the
+              player.
               <br />
               <a
                 href="https://github.com/landonprince/PySlice"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
@@ -741,7 +687,7 @@
               <a
                 href="https://github.com/landonprince/Chat-Flow-Manager"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
@@ -778,7 +724,7 @@
               <a
                 href="https://github.com/landonprince/Image-To-ASCII-Converter"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
@@ -814,7 +760,7 @@
               <a
                 href="https://github.com/landonprince/Mad-Libs-Generator"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
@@ -850,7 +796,7 @@
               <a
                 href="https://github.com/landonprince/Personal-Website"
                 target="_blank"
-                class="main__btn"
+                class="main__btn mt-8"
               >
                 <span>Github</span>
               </a>
